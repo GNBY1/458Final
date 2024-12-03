@@ -18,33 +18,35 @@
         a, a:hover, a:visited {
             color: #0071bc;
         }
-        .legend {
-            padding: 10px;
-            box-shadow: 0 1px 2px rgba(0 0 0 0.1);
-            line-height: 18px;
-            height: 150px;
-            margin-bottom: 40px;
-            width: 150px;
-            bottom: 0;
-            right: 0;
-            background: #fff;
-            border-style: solid;
-            border-color: #444;
-            margin-right: 20px;
-            z-index: 5;
-        }
 
         #legend {
-        padding:1px;
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          width: 200px;
+          background: #fff;
+          margin-right: 30px;
+          margin-bottom: 20px;
+          padding: 10px 20px 10px 10px;
+          border-radius: 3px;
+          text-align: center;
+     }
+
+     .dot {
+          display: inline-block;
+          margin-top: 5px;
+          border-radius: 50%;
+          opacity: 0.6;
+     }
+
+        #legend div span {
+            border-radius: 50%;
+            display: inline-block;
+            height: 10px;
+            margin-right: 5px;
+            width: 10px;
         }
 
-        .legend {
-        display: inline-block;
-        border-radius: 20%;
-        width: 10px;
-        height: 10px;
-        margin-right: 5px;
-        }
         #map {
             top:0;
             height: 100vh;
@@ -163,10 +165,47 @@
 <div id="map"></div>
 <div id="mapInset"></div>
 <div id="story"></div>
-<!-- <div id="legend"></div> -->
+<div id="legend">
+    <h5>Percentage of people with Mental Health In Seattle</h5>
+    <div><span style="background-color: #edf8fb"></span> ≤ 7%</div>
+    <div><span style="background-color: #ccece6"></span> ≤ 10%</div>
+    <div><span style="background-color: #99d8c9"></span> ≤ 13%</div>
+    <div><span style="background-color: #66c2a4"></span> ≤ 16%</div>
+    <div><span style="background-color: #41ae76"></span> ≤ 19%</div>
+    <div><span style="background-color: #238b45"></span> ≤ 22%</div>
+    <div><span style="background-color: #005824"></span> ≤ 25%</div>
+
+    <h5>Percentage of people with Mental Health In Seattle</h5>
+    <div><span style="background-color: #fff7ec"></span> ≤ 10%</div>
+    <div><span style="background-color: #fdd49e"></span> ≤ 30%</div>
+    <div><span style="background-color: #fc8d59"></span> ≤ 50%</div>
+    <div><span style="background-color: #d7301f"></span> ≤ 70%</div>
+    <div><span style="background-color: #7f0000"></span> ≤ 90%</div>
+    
+    <br>
+    <div><span style="background-color: #FFFF00"></span> Hospital Location</div>
+    <br>
+
+</div>
 
 <script src="./config.js"></script>
 <script>
+const legend = document.getElementById('legend');
+var grades=[3, 6, 9, 12]
+var radii=[4, 7, 17, 20]
+var colors=['#7f0000']
+var labels = ['<strong>Size</strong>'], vbreak;
+for (var i = 0; i < grades.length; i++) {
+vbreak = grades[i];
+dot_radius = 2 * radii[i];
+labels.push(
+    '<p class="break"><i class="dot" style="background:'  + colors + '; width: ' + dot_radius +
+    'px; height: ' +
+    dot_radius + 'px; "></i> <span class="dot-label" style="top: ' + dot_radius / 2 + 'px;">' + vbreak +
+    '</span></p>');
+}
+
+legend.innerHTML = legend.innerHTML + labels.join('');
 var initLoad = true;
 var layerTypes = {
     'fill': ['fill-opacity'],
@@ -396,13 +435,9 @@ map.on("load", function() {
             'paint': {
                 'fill-color' : ['interpolate', ['linear'],['get', 'PCT_POP_UNDER200PCT_POVERTY'],
                                                     0.1, '#fff7ec',
-                                                    0.2, '#fee8c8',
                                                     0.3, '#fdd49e',
-                                                    0.4, '#fdbb84',
                                                     0.5, '#fc8d59',
-                                                    0.6, '#ef6548',
                                                     0.7, '#d7301f',
-                                                    0.8, '#b30000',
                                                     0.9, '#7f0000'
             ]
             }
@@ -440,36 +475,7 @@ map.on("load", function() {
                 .addTo(map);
         });
 
-        config.chapters.forEach((record, idx) => {
-            var container = document.createElement('div');
-            var chapter = document.createElement('div');
-            if (record.title) {
-                var title = document.createElement('h3');
-                title.innerText = record.title;
-                chapter.appendChild(title);
-            }
-        if (record.legend) {
-         const legendEl = document.createElement('div');
-         legendEl.className = 'legend-div';
-         legendEl.innerHTML = '<b># of vehicles<b>'; // Change legend title.
-        const layers = ['≤ 60', '≤ 135', '≤ 260','≤ 500','≤ 2,836'];   // Change classes accordingly
-        const colors = ["#ffffd4", "#fed98e", "#fe9929","#d95f0e","#993404"]; //Change color scales accordingly
-        layers.forEach((layer, i) => {
-        const color = colors[i];
-        const item = document.createElement('div');
-        item.id = 'legend-item';
-        const key = document.createElement('span');
-            key.className = 'legend-key';
-            key.style.backgroundColor = color;
-        const value = document.createElement('span');
-            value.innerHTML = `${layer}`;
-            item.appendChild(key);
-            item.appendChild(value);
-            legendEl.appendChild(item);
-        chapter.appendChild(legendEl);
-        });
-        }
-    });
+    map.addControl(new mapboxgl.NavigationControl());
 
 
 

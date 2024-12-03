@@ -1,13 +1,12 @@
-const legend = 1;
 var config = {
     style: 'mapbox://styles/mapbox/streets-v12',
     accessToken: 'pk.eyJ1Ijoiank5MzEiLCJhIjoiY20xamt5dDhyMDJuMTJxb2VocjVlaGF1YSJ9.XGC1pAn3ZZV0pwNKAU6JLg',
-    showMarkers: true,
+    showMarkers: false,
     markerColor: '#3FB1CE',
     //projection: 'equirectangular',
     //Read more about available projections here
     //https://docs.mapbox.com/mapbox-gl-js/example/projections/
-    inset: true,
+    inset: false,
     theme: 'dark',
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
@@ -23,6 +22,7 @@ var config = {
             title: 'Adult Mental Health Issue Population in Seattle',
             image: 'image/adult_mental_health.jpg',
             description: 'According to National Alliance report, 1 in 20 U.S. adults experience serious mental illness each year, and more than half of people with a mental health condition did not receive any treatment in the past year. In this map, each polygon demonstrates adult mental health issue percentages.',
+            legend: true,
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
@@ -59,15 +59,15 @@ var config = {
                 }
             ],
             onChapterExit: [
-
+                
             ]
         },
         {
             id: 'second-identifier',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Percentage of People Under Poverty Line',
-            image: 'image/Trees.jpg',
+            image: 'image/Poor.jpg',
             description: 'In relating to the causes of mental health, poverty is mostly likely an explanatory variable that impacts the rate of adult mental health. And in response of that, the comparison between mental health percentage and poverty percentage seems to indicate the correlation between them.',
             location: {
                 center: [-122.3032001, 47.655548],
@@ -99,7 +99,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Area Around UW, Mental Health Issue percentage is the Highest',
-            image: 'image/House.jpg',
+            image: 'image/UDistrict.png',
             description: 'Among the whole Seattle, area near UW has an outstanding high percentage of mental health issue adults, which is 23.3%. About 1 in the 5 people around us reports a bad mental health state.',
             location: {
                 center: [-122.3032001, 47.655548],
@@ -108,7 +108,7 @@ var config = {
                 bearing: 0,
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 {
@@ -138,10 +138,10 @@ var config = {
         },
         {
             id: 'fourth-chapter',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Poverty Level is Also Relatively High near UW',
-            image: 'image/TreeInStreet.png',
+            image: 'image/Homeless.png',
             description: 'Areas near the University of washington has a poverty percentage of 55.77%. At the same time it is also the highest mental health percentage area.',
             location: {
                 center: [-122.3032001, 47.655548],
@@ -150,7 +150,7 @@ var config = {
                 bearing: 0,
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 {
@@ -179,7 +179,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Suicide Population In Seattle',
-            image: 'image/TreeInStreet.png',
+            image: 'image/Sad.jpg',
             description: 'As the worst consequence of serious mental health state, Suicide rate is also outstandly high in north seattle. A total of 55 suicide deaths reported in North Seattle in 2023, and 9 suicides near Univerisity of Washington.',
             location: {
                 center: [-122.3032001, 47.655548],
@@ -221,10 +221,10 @@ var config = {
 
         {
             id: 'sixth-chapter',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Hopital Accessbilities In Seattle',
-            image: 'image/TreeInStreet.png',
+            image: 'image/hospital.png',
             description: 'On the map, each yellow dots represent each available hospital services. In reponse to resolve the high mental health issues population, we need more health services where people can obtain more help. We need to pay more attention to this serious issue and apply the resources to places that need them the most.',
             location: {
                 center: [-122.3032001, 47.655548],
