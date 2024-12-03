@@ -58,11 +58,7 @@ var config = {
                 }
             ],
             onChapterExit: [
-                {
-                    layer: 'mental-health-layer',
-                    opacity: 0,
-                    duration: 0
-                }
+                
             ]
         },
         {
@@ -83,17 +79,18 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
+                    layer: 'mental-health-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+                {
                     layer: 'pop-pov-layer',
                     opacity: 1,
                  duration: 0
                      },
             ],
             onChapterExit: [
-                {
-                    layer: 'pop-pov-layer',
-                    opacity: 0,
-                    duration: 0
-                }
+                
             ]
         },
         {
@@ -106,13 +103,18 @@ var config = {
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 13,
-                pitch: 0,
+                pitch: 50,
                 bearing: 0,
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
+                {
+                    layer: 'pop-pov-layer',
+                    opacity: 0,
+                    duration: 0
+                },
                 {
                     layer: 'hospital-layer',
                     opacity: 0,
@@ -130,16 +132,12 @@ var config = {
                 }
             ],
             onChapterExit: [
-                {
-                    layer: 'mental-health-layer',
-                    opacity: 0,
-                    duration: 0
-                }
+                
             ]
         },
         {
             id: 'fourth-chapter',
-            alignment: 'fully',
+            alignment: 'right',
             hidden: false,
             title: 'We see the same pattern for mental health',
             image: 'image/TreeInStreet.png',
@@ -147,7 +145,7 @@ var config = {
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 13,
-                pitch: 0,
+                pitch: 50,
                 bearing: 0,
             },
             mapAnimation: 'flyTo',
@@ -156,8 +154,96 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'mental-health-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+
+                {
+                    layer: 'suicide-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+
+                {
+                    layer: 'pop-pov-layer',
                     opacity: 1,
                     duration: 10
+                }
+            ],
+            onChapterExit: []
+        },
+
+        {
+            id: 'fifth-chapter',
+            alignment: 'left',
+            hidden: false,
+            title: 'We see the same pattern for mental health',
+            image: 'image/TreeInStreet.png',
+            description: 'We can see that non-MHA areas tend to have denser trees than MHA areas.',
+            location: {
+                center: [-122.3032001, 47.655548],
+                zoom: 10,
+                pitch: 0,
+                bearing: 0,
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'pop-pov-layer',
+                    opacity: 0,
+                    duration: 10
+                },
+
+                {
+                    layer: 'mental-health-layer',
+                    opacity: 1,
+                    duration: 0
+                },
+
+                {
+                    layer: 'suicide-layer',
+                    opacity: 1,
+                    duration: 0
+                },
+
+                {
+                    layer: 'hospital-layer',
+                    opacity: 0,
+                    duration: 0
+                }
+                
+            ],
+            onChapterExit: []
+        },
+
+        {
+            id: 'sixth-chapter',
+            alignment: 'right',
+            hidden: false,
+            title: 'We see the same pattern for mental health',
+            image: 'image/TreeInStreet.png',
+            description: 'We can see that non-MHA areas tend to have denser trees than MHA areas.',
+            location: {
+                center: [-122.3032001, 47.655548],
+                zoom: 10,
+                pitch: 0,
+                bearing: 0,
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'suicide-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+                {
+                    layer: 'hospital-layer',
+                    opacity: 1,
+                    duration: 0
                 }
             ],
             onChapterExit: []
