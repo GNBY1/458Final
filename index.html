@@ -329,75 +329,117 @@ map.on("load", function() {
         });
     };
 
-    map.addLayer({
-            'id': 'earthquakes-layer',
-            'type': 'circle',
-            'source':  {type: 'geojson',
-                            data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
-                            },
-            'paint': {
-                'circle-radius': ['interpolate',['linear'],['get','mag'],
-                                                  1,        0.7,
-                                                  1.5,      2,
-                                                  2,        4,
-                                                  2.5,      5,
-                                                  3,        6,
-                                                  3.5,      7,
-                                                  4.5,      9,
-                                                  6.5,      15,
-                                                  8.5,      17,
-                                                  10.5,     20],
-                'circle-stroke-width': 0.5,
-                'circle-stroke-color': 'white',
-                'circle-color': ['interpolate',['linear'],['get', 'mag'],
-                                                  1,  '#fff7ec',
-                                                  1.5,'#fee8c8',
-                                                  2, '#fdd49e',
-                                                  2.5, '#fdbb84',
-                                                  3, '#fc8d59',
-                                                  3.5, '#ef6548',
-                                                  4.5, '#d7301f',
-                                                  6.5, '#b30000',
-                                                  8.5, '#7f0000',
-                                                  10.5, '#000']
-            }
-        });
-
-        // map.addSource('population', {
-        //     type: 'geojson',
-        //     data: 'Data/Seattle_Tree_Canopy_2021_Tree_Crowns.geojson'
-        //     }); 
+    // map.addLayer({
+    //         'id': 'earthquakes-layer',
+    //         'type': 'circle',
+    //         'source':  {type: 'geojson',
+    //                         data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
+    //                         },
+    //         'paint': {
+    //             'circle-radius': ['interpolate',['linear'],['get','mag'],
+    //                                               1,        0.7,
+    //                                               1.5,      2,
+    //                                               2,        4,
+    //                                               2.5,      5,
+    //                                               3,        6,
+    //                                               3.5,      7,
+    //                                               4.5,      9,
+    //                                               6.5,      15,
+    //                                               8.5,      17,
+    //                                               10.5,     20],
+    //             'circle-stroke-width': 0.5,
+    //             'circle-stroke-color': 'white',
+    //             'circle-color': ['interpolate',['linear'],['get', 'mag'],
+    //                                               1,  '#fff7ec',
+    //                                               1.5,'#fee8c8',
+    //                                               2, '#fdd49e',
+    //                                               2.5, '#fdbb84',
+    //                                               3, '#fc8d59',
+    //                                               3.5, '#ef6548',
+    //                                               4.5, '#d7301f',
+    //                                               6.5, '#b30000',
+    //                                               8.5, '#7f0000',
+    //                                               10.5, '#000']
+    //         }
+    //     });
 
         map.addLayer({
-            'id': 'SeattleTreeCrowns',
-            'type': 'circle',
+            'id': 'mental-health-layer',
+            'type': 'fill',
             'source':  {type: 'geojson',
-                            data: 'Data/Seattle_Tree_Centroids_2021.geojson'
+                            data: 'Data/Race_and_Social_Equity_Composite_Index_Current_-7412683458374933434.geojson'
                             },
             'paint': {
-                'circle-color' : ['interpolate', ['linear'],['get', 'Radius'],
-                                                    10, '#edf8fb',
-                                                    15, '#ccece6',
-                                                    20, '#99d8c9',
-                                                    25, '#66c2a4',
-                                                    30, '#41ae76',
-                                                    35, '#238b45',
-                                                    40, '#005824'
+                'fill-color' : ['interpolate', ['linear'],['get', 'PCT_ADULT_MENTALHLTHNOTGOOD'],
+                                                    0.07, '#edf8fb',
+                                                    0.1, '#ccece6',
+                                                    0.13, '#99d8c9',
+                                                    0.16, '#66c2a4',
+                                                    0.19, '#41ae76',
+                                                    0.22, '#238b45',
+                                                    0.25, '#005824'
             ]
             }
         });
 
         map.addLayer({
-            'id': 'MHA-layer',
-            'type': 'fill',
+            'id': 'hospital-layer',
+            'type': 'circle',
             'source': {
                 type: 'geojson',
-                data: 'Data/Mandatory_Housing_Affordability_Zoning_6769961750012106462.geojson' // Replace with your actual URL
+                data: 'Data/Medical_Facilities_including_Hospitals___medical_facilities_point.geojson' // Replace with your actual URL
             },
             'paint': {
-                'fill-color': '#225ea8',
+                'circle-color': '#FFFF00',
             }
         });
+
+        map.addLayer({
+            'id': 'pop-pov-layer',
+            'type': 'fill',
+            'source':  {type: 'geojson',
+                            data: 'Data/Race_and_Social_Equity_Composite_Index_Current_-7412683458374933434.geojson'
+                            },
+            'paint': {
+                'fill-color' : ['interpolate', ['linear'],['get', 'PCT_POP_UNDER200PCT_POVERTY'],
+                                                    0.1, '#fff7ec',
+                                                    0.2, '#fee8c8',
+                                                    0.3, '#fdd49e',
+                                                    0.4, '#fdbb84',
+                                                    0.5, '#fc8d59',
+                                                    0.6, '#ef6548',
+                                                    0.7, '#d7301f',
+                                                    0.8, '#b30000',
+                                                    0.9, '#7f0000'
+            ]
+            }
+        });
+
+        map.addLayer({
+            'id': 'suicide-layer',
+            'type': 'circle',
+            'source': {
+                type: 'geojson',
+                data: 'Data/suicidePop.geojson' // Replace with your actual URL
+            },
+            'paint': {
+                'circle-color': '#7f0000',
+                'circle-radius': ['interpolate',['linear'],['get','Suicide_Death'],
+                                                  1,        0.7,
+                                                  2,      2,
+                                                  3,        4,
+                                                  4,      5,
+                                                  5,        6,
+                                                  6,      7,
+                                                  7,      9,
+                                                  8,      15,
+                                                  9,      17,
+                                                  10,     20],
+                'circle-stroke-width': 0.5,
+                'circle-stroke-color': 'white'
+            }
+        });
+
 
 
     // As the map moves, grab and update bounds in inset map.

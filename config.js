@@ -19,12 +19,12 @@ var config = {
             id: 'slug-style-id',
             alignment: 'left',
             hidden: false,
-            title: 'Global Earthquake',
+            title: 'Percentage of people under 200% poverty line',
             image: 'image/Earthquake.jpg',
             description: 'Earthquake usually come with a large environmental damage, specifically for the plants, plants in web area to be exact. It can be predicted that in humid areas, if earthquakes occur frequently, plants will be severely affected, otherwise there will be no impact.',
             location: {
-                center: [-95.712891, 37.09024],
-                zoom: 1,
+                center: [-122.3032001, 47.655548],
+                zoom: 10,
                 pitch: 0,
                 bearing: 0
             },
@@ -34,10 +34,16 @@ var config = {
             onChapterEnter: [
                 // add the following:
                 {
-                    layer: 'earthquakes-layer',
+                    layer: 'pop-pov-layer',
                     opacity: 1,
-                 duration: 5000
-                     }
+                    duration: 5000
+                },
+
+                {
+                    layer: 'hospital-layer',
+                    opacity: 0,
+                    duration: 5000
+                }
             ],
             onChapterExit: [
                 // {
@@ -50,7 +56,7 @@ var config = {
             id: 'second-identifier',
             alignment: 'right',
             hidden: false,
-            title: 'Trees in Seattle',
+            title: 'Percent of people with Mental Health In Seattle',
             image: 'image/Trees.jpg',
             description: 'Each dot repersents the tree location in Seattle, as well as their radius in size, the darker point stand for larger tree radius. As we can see, Seattle does not have a major earthquake record and does not have any impact on their plant health',
             location: {
@@ -64,34 +70,35 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'SeattleTreeCrowns',
+                    layer: 'mental-health-layer',
                     opacity: 1,
                     duration: 10
                 },
 
                 {
-                    layer: 'earthquakes-layer',
-                    opacity: 1,
+                    layer: 'pop-pov-layer',
+                    opacity: 0,
                  duration: 5000
                      },
-
-                {
-                    layer: 'MHA-layer',
-                    opacity: 0
-                }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                {
+                    layer: 'mental-health-layer',
+                    opacity: 0,
+                    duration: 10
+                }
+            ]
         },
         {
             id: 'third-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'MHA in Seattle',
+            title: 'Area around UW, poverty level is the highest in Seattle',
             image: 'image/House.jpg',
             description: 'This makes Seattle a great place to live, but with it comes an increase in housing costs. To this end, Seattle has many MHAs to ensure that residents have access to affordable housing.',
             location: {
-                center: [-122.33207, 47.60621],
-                zoom: 11,
+                center: [-122.3032001, 47.655548],
+                zoom: 13,
                 pitch: 0,
                 bearing: 0,
             },
@@ -100,34 +107,29 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'SeattleTreeCrowns',
-                    opacity: 0,
-                    duration: 10
-                },
-
-                {
-                    layer: 'earthquakes-layer',
+                    layer: 'pop-pov-layer',
                     opacity: 1,
-                 duration: 5000
-                     },
-
-                {
-                    layer: 'MHA-layer',
-                    opacity: 0.5
+                    duration: 5000
                 }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                {
+                    layer: 'pop-pov-layer',
+                    opacity: 0,
+                    duration: 5000
+                }
+            ]
         },
         {
             id: 'fourth-chapter',
             alignment: 'fully',
             hidden: false,
-            title: 'Trees and MHA in Seattle',
+            title: 'We see the same pattern for mental health',
             image: 'image/TreeInStreet.png',
             description: 'We can see that non-MHA areas tend to have denser trees than MHA areas.',
             location: {
-                center: [-122.33207, 47.60621],
-                zoom: 11,
+                center: [-122.3032001, 47.655548],
+                zoom: 13,
                 pitch: 0,
                 bearing: 0,
             },
@@ -136,20 +138,9 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'SeattleTreeCrowns',
+                    layer: 'mental-health-layer',
                     opacity: 1,
                     duration: 10
-                },
-
-                {
-                    layer: 'earthquakes-layer',
-                    opacity: 1,
-                 duration: 5000
-                     },
-
-                {
-                    layer: 'MHA-layer',
-                    opacity: 0.5
                 }
             ],
             onChapterExit: []

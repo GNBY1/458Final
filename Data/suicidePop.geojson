@@ -1,0 +1,345 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 1
+        },
+        "geometry": {
+          "coordinates": [
+            -122.36874607290753,
+            47.73223090471569
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 5
+        },
+        "geometry": {
+          "coordinates": [
+            -122.33878809452352,
+            47.73695996421287
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 3
+        },
+        "geometry": {
+          "coordinates": [
+            -122.31405728409257,
+            47.758299918948495
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 9
+        },
+        "geometry": {
+          "coordinates": [
+            -122.3055612845543,
+            47.721986797062016
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 9
+        },
+        "geometry": {
+          "coordinates": [
+            -122.2981117731045,
+            47.68928630849064
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 9
+        },
+        "geometry": {
+          "coordinates": [
+            -122.30502240406634,
+          47.65886459718442
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 11
+        },
+        "geometry": {
+          "coordinates": [
+            -122.34151059072457,
+            47.673262070437175
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 2
+        },
+        "geometry": {
+          "coordinates": [
+            -122.38403815160547,
+            47.686782624986506
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 6
+        },
+        "geometry": {
+          "coordinates": [
+            -122.38029823293698,
+            47.66918003223506
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 6
+        },
+        "geometry": {
+          "coordinates": [
+            -122.40645368076238,
+            47.6528083825325
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 3
+        },
+        "geometry": {
+          "coordinates": [
+            -122.3765654474971,
+            47.643999498628204
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 7
+        },
+        "geometry": {
+          "coordinates": [
+            -122.35228873635714,
+            47.635824186919336
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 5
+        },
+        "geometry": {
+          "coordinates": [
+            -122.32185241471694,
+            47.63522211180074
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 4
+        },
+        "geometry": {
+          "coordinates": [
+            -122.2951337488773,
+            47.631235455807456
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 4
+        },
+        "geometry": {
+          "coordinates": [
+            -122.29879890930275,
+            47.61416468217001
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 2
+        },
+        "geometry": {
+          "coordinates": [
+            -122.35195548796368,
+            47.61852642735238
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 4
+        },
+        "geometry": {
+          "coordinates": [
+            -122.334510324097,
+            47.613774103638605
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 4
+        },
+        "geometry": {
+          "coordinates": [
+            -122.33173056645349,
+            47.59953297390402
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 6
+        },
+        "geometry": {
+          "coordinates": [
+            -122.3014364721067,
+            47.58581727821678
+          ],
+          "type": "Point"
+        },
+        "id": 18
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 1
+        },
+        "geometry": {
+          "coordinates": [
+            -122.33315613051579,
+            47.575547178524005
+          ],
+          "type": "Point"
+        },
+        "id": 19
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 5
+        },
+        "geometry": {
+          "coordinates": [
+            -122.3945312735637,
+            47.57371292098935
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 2
+        },
+        "geometry": {
+          "coordinates": [
+            -122.38429986972125,
+            47.540207561499614
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 4
+        },
+        "geometry": {
+          "coordinates": [
+            -122.37197926035618,
+            47.55111842602935
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 2
+        },
+        "geometry": {
+          "coordinates": [
+            -122.35179368264693,
+            47.5427562986163
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 2
+        },
+        "geometry": {
+          "coordinates": [
+            -122.3140216529032,
+            47.543895028725245
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Suicide_Death": 4
+        },
+        "geometry": {
+          "coordinates": [
+            -122.27948499170441,
+            47.54393261934851
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }
