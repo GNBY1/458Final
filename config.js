@@ -19,7 +19,7 @@ var config = {
             id: 'slug-style-id',
             alignment: 'left',
             hidden: false,
-            title: 'Percentage of people under 200% poverty line',
+            title: 'Percent of people with Mental Health In Seattle',
             image: 'image/Earthquake.jpg',
             description: 'Earthquake usually come with a large environmental damage, specifically for the plants, plants in web area to be exact. It can be predicted that in humid areas, if earthquakes occur frequently, plants will be severely affected, otherwise there will be no impact.',
             location: {
@@ -35,57 +35,64 @@ var config = {
                 // add the following:
                 {
                     layer: 'pop-pov-layer',
-                    opacity: 1,
-                    duration: 5000
+                    opacity: 0,
+                    duration: 0
                 },
 
                 {
                     layer: 'hospital-layer',
                     opacity: 0,
-                    duration: 5000
+                    duration: 0
+                },
+
+                {
+                    layer: 'suicide-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+
+                {
+                    layer: 'mental-health-layer',
+                    opacity: 1,
+                    duration: 0
                 }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'mental-health-layer',
+                    opacity: 0,
+                    duration: 0
+                }
             ]
         },
         {
             id: 'second-identifier',
             alignment: 'right',
             hidden: false,
-            title: 'Percent of people with Mental Health In Seattle',
+            title: 'Percentage of people under 200% poverty line',
             image: 'image/Trees.jpg',
             description: 'Each dot repersents the tree location in Seattle, as well as their radius in size, the darker point stand for larger tree radius. As we can see, Seattle does not have a major earthquake record and does not have any impact on their plant health',
             location: {
-                center: [-122.33207, 47.60621],
-                zoom: 11,
+                center: [-122.3032001, 47.655548],
+                zoom: 10,
                 pitch: 0,
-                bearing: 0,
+                bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'mental-health-layer',
-                    opacity: 1,
-                    duration: 10
-                },
-
-                {
                     layer: 'pop-pov-layer',
-                    opacity: 0,
-                 duration: 5000
+                    opacity: 1,
+                 duration: 0
                      },
             ],
             onChapterExit: [
                 {
-                    layer: 'mental-health-layer',
+                    layer: 'pop-pov-layer',
                     opacity: 0,
-                    duration: 10
+                    duration: 0
                 }
             ]
         },
@@ -93,7 +100,7 @@ var config = {
             id: 'third-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Area around UW, poverty level is the highest in Seattle',
+            title: 'Area around UW, mental health percentage is the highest in Seattle',
             image: 'image/House.jpg',
             description: 'This makes Seattle a great place to live, but with it comes an increase in housing costs. To this end, Seattle has many MHAs to ensure that residents have access to affordable housing.',
             location: {
@@ -107,16 +114,26 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'pop-pov-layer',
+                    layer: 'hospital-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+                {
+                    layer: 'suicide-layer',
+                    opacity: 0,
+                    duration: 0
+                },
+                {
+                    layer: 'mental-health-layer',
                     opacity: 1,
-                    duration: 5000
+                    duration: 0
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'pop-pov-layer',
+                    layer: 'mental-health-layer',
                     opacity: 0,
-                    duration: 5000
+                    duration: 0
                 }
             ]
         },
