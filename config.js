@@ -20,8 +20,8 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Adult Mental Health Issue Population in Seattle',
-            image: 'image/Earthquake.jpg',
-            description: 'Earthquake usually come with a large environmental damage, specifically for the plants, plants in web area to be exact. It can be predicted that in humid areas, if earthquakes occur frequently, plants will be severely affected, otherwise there will be no impact.',
+            image: 'image/adult_mental_health.jpg',
+            description: 'According to National Alliance report, 1 in 20 U.S. adults experience serious mental illness each year, and more than half of people with a mental health condition did not receive any treatment in the past year.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
