@@ -18,6 +18,33 @@
         a, a:hover, a:visited {
             color: #0071bc;
         }
+        .legend {
+            padding: 10px;
+            box-shadow: 0 1px 2px rgba(0 0 0 0.1);
+            line-height: 18px;
+            height: 150px;
+            margin-bottom: 40px;
+            width: 150px;
+            bottom: 0;
+            right: 0;
+            background: #fff;
+            border-style: solid;
+            border-color: #444;
+            margin-right: 20px;
+            z-index: 5;
+        }
+
+        #legend {
+        padding:1px;
+        }
+
+        .legend {
+        display: inline-block;
+        border-radius: 20%;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        }
         #map {
             top:0;
             height: 100vh;
@@ -136,6 +163,7 @@
 <div id="map"></div>
 <div id="mapInset"></div>
 <div id="story"></div>
+<!-- <div id="legend"></div> -->
 
 <script src="./config.js"></script>
 <script>
@@ -305,7 +333,6 @@ if (config.showMarkers) {
 // instantiate the scrollama
 var scroller = scrollama();
 
-
 map.on("load", function() {
     if (config.use3dTerrain) {
         map.addSource('mapbox-dem', {
@@ -328,40 +355,6 @@ map.on("load", function() {
             }
         });
     };
-
-    // map.addLayer({
-    //         'id': 'earthquakes-layer',
-    //         'type': 'circle',
-    //         'source':  {type: 'geojson',
-    //                         data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
-    //                         },
-    //         'paint': {
-    //             'circle-radius': ['interpolate',['linear'],['get','mag'],
-    //                                               1,        0.7,
-    //                                               1.5,      2,
-    //                                               2,        4,
-    //                                               2.5,      5,
-    //                                               3,        6,
-    //                                               3.5,      7,
-    //                                               4.5,      9,
-    //                                               6.5,      15,
-    //                                               8.5,      17,
-    //                                               10.5,     20],
-    //             'circle-stroke-width': 0.5,
-    //             'circle-stroke-color': 'white',
-    //             'circle-color': ['interpolate',['linear'],['get', 'mag'],
-    //                                               1,  '#fff7ec',
-    //                                               1.5,'#fee8c8',
-    //                                               2, '#fdd49e',
-    //                                               2.5, '#fdbb84',
-    //                                               3, '#fc8d59',
-    //                                               3.5, '#ef6548',
-    //                                               4.5, '#d7301f',
-    //                                               6.5, '#b30000',
-    //                                               8.5, '#7f0000',
-    //                                               10.5, '#000']
-    //         }
-    //     });
 
         map.addLayer({
             'id': 'mental-health-layer',
@@ -447,30 +440,36 @@ map.on("load", function() {
                 .addTo(map);
         });
 
-        // create legend object, it will anchor to the div element with the id legend.
-        const legend = document.getElementById('legend');
-        var grades=[2, 4.5, 8.5]
-        var radii=[4,9,17]
-        var colors=['#fdd49e','#d7301f','#7f0000']
-        //set up legend grades and labels
-        var labels = ['<strong>Size</strong>'], vbreak;
-        //iterate through grades and create a scaled circle and label for each
-        for (var i = 0; i < grades.length; i++) {
-            vbreak = grades[i];
-            // you need to manually adjust the radius of each dot on the legend 
-            // in order to make sure the legend can be properly referred to the dot on the map.
-            dot_radius = 2 * radii[i];
-            labels.push(
-                '<p class="break"><i class="dot" style="background:' + colors[i] + '; width: ' + dot_radius +
-                'px; height: ' +
-                dot_radius + 'px; "></i> <span class="dot-label" style="top: ' + dot_radius / 2 + 'px;">' + vbreak +
-                '</span></p>');
+        config.chapters.forEach((record, idx) => {
+            var container = document.createElement('div');
+            var chapter = document.createElement('div');
+            if (record.title) {
+                var title = document.createElement('h3');
+                title.innerText = record.title;
+                chapter.appendChild(title);
+            }
+        if (record.legend) {
+         const legendEl = document.createElement('div');
+         legendEl.className = 'legend-div';
+         legendEl.innerHTML = '<b># of vehicles<b>'; // Change legend title.
+        const layers = ['≤ 60', '≤ 135', '≤ 260','≤ 500','≤ 2,836'];   // Change classes accordingly
+        const colors = ["#ffffd4", "#fed98e", "#fe9929","#d95f0e","#993404"]; //Change color scales accordingly
+        layers.forEach((layer, i) => {
+        const color = colors[i];
+        const item = document.createElement('div');
+        item.id = 'legend-item';
+        const key = document.createElement('span');
+            key.className = 'legend-key';
+            key.style.backgroundColor = color;
+        const value = document.createElement('span');
+            value.innerHTML = `${layer}`;
+            item.appendChild(key);
+            item.appendChild(value);
+            legendEl.appendChild(item);
+        chapter.appendChild(legendEl);
+        });
         }
-        const source =
-            '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
-
-        // combine all the html codes.
-        legend.innerHTML = labels.join('') + source;
+    });
 
 
 
@@ -623,6 +622,8 @@ function addInsetLayer(bounds) {
 function updateInsetLayer(bounds) {
     insetMap.getSource('boundsSource').setData(bounds);
 }
+
+
 
 </script>
 

@@ -1,3 +1,4 @@
+const legend = 1;
 var config = {
     style: 'mapbox://styles/mapbox/streets-v12',
     accessToken: 'pk.eyJ1Ijoiank5MzEiLCJhIjoiY20xamt5dDhyMDJuMTJxb2VocjVlaGF1YSJ9.XGC1pAn3ZZV0pwNKAU6JLg',
@@ -22,6 +23,7 @@ var config = {
             title: 'Adult Mental Health Issue Population in Seattle',
             image: 'image/adult_mental_health.jpg',
             description: 'According to National Alliance report, 1 in 20 U.S. adults experience serious mental illness each year, and more than half of people with a mental health condition did not receive any treatment in the past year.',
+            legend: true,
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
@@ -68,6 +70,7 @@ var config = {
             title: 'Percentage of people under 200% poverty line',
             image: 'image/Trees.jpg',
             description: 'Each dot repersents the tree location in Seattle, as well as their radius in size, the darker point stand for larger tree radius. As we can see, Seattle does not have a major earthquake record and does not have any impact on their plant health',
+            legend: true,
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
