@@ -21,7 +21,7 @@ var config = {
             hidden: false,
             title: 'Adult Mental Health Issue Population in Seattle',
             image: 'image/adult_mental_health.jpg',
-            description: 'According to National Alliance report, 1 in 20 U.S. adults experience serious mental illness each year, and more than half of people with a mental health condition did not receive any treatment in the past year.',
+            description: 'According to National Alliance report, 1 in 20 U.S. adults experience serious mental illness each year, and more than half of people with a mental health condition did not receive any treatment in the past year. In this map, each polygon demonstrates adult mental health issue percentages.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
@@ -58,16 +58,16 @@ var config = {
                 }
             ],
             onChapterExit: [
-                
+
             ]
         },
         {
             id: 'second-identifier',
             alignment: 'right',
             hidden: false,
-            title: 'Percentage of people under 200% poverty line',
+            title: 'Percentage of People Under Poverty Line',
             image: 'image/Trees.jpg',
-            description: 'Each dot repersents the tree location in Seattle, as well as their radius in size, the darker point stand for larger tree radius. As we can see, Seattle does not have a major earthquake record and does not have any impact on their plant health',
+            description: 'In relating to the causes of mental health, poverty is mostly likely an explanatory variable that impacts the rate of adult mental health. And in response of that, the comparison between mental health percentage and poverty percentage seems to indicate the correlation between them.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
@@ -90,16 +90,16 @@ var config = {
                      },
             ],
             onChapterExit: [
-                
+
             ]
         },
         {
             id: 'third-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Area around UW, mental health percentage is the highest in Seattle',
+            title: 'Area Around UW, Mental Health Issue percentage is the Highest',
             image: 'image/House.jpg',
-            description: 'This makes Seattle a great place to live, but with it comes an increase in housing costs. To this end, Seattle has many MHAs to ensure that residents have access to affordable housing.',
+            description: 'Among the whole Seattle, area near UW has an outstanding high percentage of mental health issue adults, which is 23.3%. About 1 in the 5 people around us reports a bad mental health state.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 13,
@@ -132,16 +132,16 @@ var config = {
                 }
             ],
             onChapterExit: [
-                
+
             ]
         },
         {
             id: 'fourth-chapter',
             alignment: 'right',
             hidden: false,
-            title: 'We see the same pattern for mental health',
+            title: 'Poverty Level is Also Relatively High near UW',
             image: 'image/TreeInStreet.png',
-            description: 'We can see that non-MHA areas tend to have denser trees than MHA areas.',
+            description: 'Areas near the University of washington has a poverty percentage of 55.77%. At the same time it is also the highest mental health percentage area.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 13,
@@ -177,9 +177,9 @@ var config = {
             id: 'fifth-chapter',
             alignment: 'left',
             hidden: false,
-            title: 'We see the same pattern for mental health',
+            title: 'Suicide Population In Seattle',
             image: 'image/TreeInStreet.png',
-            description: 'We can see that non-MHA areas tend to have denser trees than MHA areas.',
+            description: 'As the worst consequence of serious mental health state, Suicide rate is also outstandly high in north seattle. A total of 55 suicide deaths reported in North Seattle in 2023, and 9 suicides near Univerisity of Washington.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
@@ -213,7 +213,7 @@ var config = {
                     opacity: 0,
                     duration: 0
                 }
-                
+
             ],
             onChapterExit: []
         },
@@ -222,9 +222,9 @@ var config = {
             id: 'sixth-chapter',
             alignment: 'right',
             hidden: false,
-            title: 'We see the same pattern for mental health',
+            title: 'Hopital Accessbilities In Seattle',
             image: 'image/TreeInStreet.png',
-            description: 'We can see that non-MHA areas tend to have denser trees than MHA areas.',
+            description: 'On the map, each yellow dots represent each available hospital services. In reponse to resolve the high mental health issues population, we need more health services where people can obtain more help. We need to pay more attention to this serious issue and apply the resources to places that need them the most.',
             location: {
                 center: [-122.3032001, 47.655548],
                 zoom: 10,
