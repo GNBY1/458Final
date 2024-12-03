@@ -10,16 +10,16 @@ var config = {
     theme: 'dark',
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
-    title: 'Living in Seattle',
-    subtitle: 'Seattle is a beautiful place, earthquakes are rare, vegetation is lush.',
-    byline: 'By Jimmy Yang',
+    title: 'We Need More Support For Mental Health Adults',
+    subtitle: 'Mental Health Matters, And people do need more supports! No matter Adult or Teenager!',
+    byline: 'By Jimmy Yang, Vincent Li',
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
             id: 'slug-style-id',
             alignment: 'left',
             hidden: false,
-            title: 'Percentage of people under 200% poverty line',
+            title: 'Adult Mental Health Issue Population in Seattle',
             image: 'image/Earthquake.jpg',
             description: 'Earthquake usually come with a large environmental damage, specifically for the plants, plants in web area to be exact. It can be predicted that in humid areas, if earthquakes occur frequently, plants will be severely affected, otherwise there will be no impact.',
             location: {
