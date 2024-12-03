@@ -440,6 +440,38 @@ map.on("load", function() {
             }
         });
 
+        map.on('click', 'suicide-layer', (event) => {
+            new mapboxgl.Popup()
+                .setLngLat(event.features[0].geometry.coordinates)
+                .setHTML(`<strong>Number of Suicide:</strong> ${event.features[0].properties.Suicide_Death}`)
+                .addTo(map);
+        });
+
+        // create legend object, it will anchor to the div element with the id legend.
+        const legend = document.getElementById('legend');
+        var grades=[2, 4.5, 8.5]
+        var radii=[4,9,17]
+        var colors=['#fdd49e','#d7301f','#7f0000']
+        //set up legend grades and labels
+        var labels = ['<strong>Size</strong>'], vbreak;
+        //iterate through grades and create a scaled circle and label for each
+        for (var i = 0; i < grades.length; i++) {
+            vbreak = grades[i];
+            // you need to manually adjust the radius of each dot on the legend 
+            // in order to make sure the legend can be properly referred to the dot on the map.
+            dot_radius = 2 * radii[i];
+            labels.push(
+                '<p class="break"><i class="dot" style="background:' + colors[i] + '; width: ' + dot_radius +
+                'px; height: ' +
+                dot_radius + 'px; "></i> <span class="dot-label" style="top: ' + dot_radius / 2 + 'px;">' + vbreak +
+                '</span></p>');
+        }
+        const source =
+            '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
+
+        // combine all the html codes.
+        legend.innerHTML = labels.join('') + source;
+
 
 
     // As the map moves, grab and update bounds in inset map.
