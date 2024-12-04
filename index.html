@@ -181,7 +181,7 @@
     <div><span style="background-color: #fc8d59"></span> ≤ 50%</div>
     <div><span style="background-color: #d7301f"></span> ≤ 70%</div>
     <div><span style="background-color: #7f0000"></span> ≤ 90%</div>
-    
+
     <br>
     <div><span style="background-color: #FFFF00"></span> Hospital Location</div>
     <br>
@@ -493,7 +493,7 @@ map.on("load", function() {
     .onStepEnter(async response => {
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
-        
+
         response.element.classList.add('active');
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
 

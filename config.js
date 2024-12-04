@@ -24,8 +24,8 @@ var config = {
             description: 'According to National Alliance report, 1 in 20 U.S. adults experience serious mental illness each year, and more than half of people with a mental health condition did not receive any treatment in the past year. In this map, each polygon demonstrates adult mental health issue percentages.',
             legend: true,
             location: {
-                center: [-122.3032001, 47.655548],
-                zoom: 10,
+                center: [-122.3732001, 47.625548],
+                zoom: 10.3,
                 pitch: 0,
                 bearing: 0
             },
@@ -59,7 +59,7 @@ var config = {
                 }
             ],
             onChapterExit: [
-                
+
             ]
         },
         {
@@ -70,8 +70,8 @@ var config = {
             image: 'image/Poor.jpg',
             description: 'In relating to the causes of mental health, poverty is mostly likely an explanatory variable that impacts the rate of adult mental health. And in response of that, the comparison between mental health percentage and poverty percentage seems to indicate the correlation between them.',
             location: {
-                center: [-122.3032001, 47.655548],
-                zoom: 10,
+                center: [-122.3732001, 47.625548],
+                zoom: 10.3,
                 pitch: 0,
                 bearing: 0
             },
@@ -182,8 +182,8 @@ var config = {
             image: 'image/Sad.jpg',
             description: 'As the worst consequence of serious mental health state, Suicide rate is also outstandly high in north seattle. A total of 55 suicide deaths reported in North Seattle in 2023, and 9 suicides near Univerisity of Washington.',
             location: {
-                center: [-122.3032001, 47.655548],
-                zoom: 10,
+                center: [-122.3732001, 47.625548],
+                zoom: 10.3,
                 pitch: 0,
                 bearing: 0,
             },
@@ -227,8 +227,8 @@ var config = {
             image: 'image/hospital.png',
             description: 'On the map, each yellow dots represent each available hospital services. In reponse to resolve the high mental health issues population, we need more health services where people can obtain more help. We need to pay more attention to this serious issue and apply the resources to places that need them the most.',
             location: {
-                center: [-122.3032001, 47.655548],
-                zoom: 10,
+                center: [-122.3732001, 47.625548],
+                zoom: 10.3,
                 pitch: 0,
                 bearing: 0,
             },
